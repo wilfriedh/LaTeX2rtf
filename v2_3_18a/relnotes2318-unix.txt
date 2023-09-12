@@ -1,0 +1,134 @@
+This is the unix package: Contains ONLY source code. 
+ It has to be compiled and installed before it can be used. 
+ The source code is not restricted to unix systems but 
+ can also be compiled on several other systems, including Mac OS X.
+
+Changes (since 2.3.17)
+resolving "latex2rtf ignores '-C'" (Michael Artmann 2018-09-08)
+cleaning up Makefile, isolating DESTDIR from PREFIX (Pedro Andres Aranda Gutierrez 2018-12-28)
+adding support for user defined counters accessed through \the<counter> (Pedro Andres Aranda Gutierrez 2018-12-28)
+adding hebrew.cfg
+
+Changes (since 2.3.16)
+- support for non-ascii characters in verbatim blocks 
+  and theorem captions and support for the proof environment
+- updated documentation for uninstall under Linux
+
+Changes (since 2.3.15)
+- fixed ukrainian.cfg
+- in l2rshell.cpp, added check for buffer overflow 
+  during construction of command line for latex2rt.exe
+
+Changes (since 2.3.13)
+
+- added support for package bm, supporting \bm (bold math)
+- fixed bug when \int was followed by \left or \right
+- fixed bug when \int was followed by \frac
+
+Changes (since 2.3.12)
+
+- fixed bug in main.c line 368: comparison changed to using strcmp() (was =)
+- updated documentation for installation under unix:
+  in MAKEFILE, variable PREFIX was changed to DESTDIR
+
+Changes (since 2.3.11)
+
+- added error message if output file is equal to input file
+- fixed windows gui shell handling of output file choice
+(default output file extension in the file selection window was .tex!)
+
+Changes (since 2.3.10)
+
+Fix memory leak which could cause address exception under certain circumstances
+
+Changes (since 2.3.9)
+
+Fix potential vulnerability in processing the LaTeX command \keywords{}
+
+Changes (since 2.3.8)
+
+Switch to use the recent version of Ghostscript.
+Use eps2eps from Ghostscript instead of from MikTeX distribution. 
+ Therefore changed the order of program folders in PATH setting
+ in l2rshell.exe (windows GUI) as well as in l2rprep.bat
+Modified latex2png script for compatibility with Ghostscript 9.14 and newer
+(gs 9.14 and newer use a different eps2eps script producing better quality eps 
+ files on the expense of containing binary stuff)
+
+Changes (since 2.3.7)
+
+ * extra blank after exclamation mark and after question mark removed
+
+Changes (since 2.3.6)
+
+ * when converting equations to bitmaps or eps, some equations 
+   incorrectly got double numbers. 
+   Fixed by replacing \begin{equation}...\end{equation}
+   by \begin{displaymath}...\end{displaymath}
+
+Changes (since 2.3.5)
+
+ * updated address of Free Software Foundation (General Public License)
+
+Changes (since 2.3.4)
+
+ * when converting equations to bitmaps or eps, some equations were 
+   not correctly converted because \begin{equation}...\end{equation}
+   was replaced by $$...$$
+
+Changes (since 2.3.3)
+
+ * added basic support for tikz
+
+Changes (since 2.3.2)
+
+ * fixed bug in "WriteEquationAsBitmapOrEPS" 
+    (do not split equations at \\ in align environments)
+
+Changes (since 2.3.1)
+
+ * creating html files in doc/web removed from doc/Makefile in Unix distribution
+   (but not in SVN repository)
+
+ * fixed bug in "PutEpsFile" and "PutPdfFile" 
+    (converted eps file name did not include temp folder)
+
+New features (since 2.3.1)
+
+ * better support for documents which need pdflatex or xelatex
+   when converting equations to bitmaps or eps files
+
+Changes (since 2.3.0) include
+
+ * fixed bug in "PutEpsFile" (variable eps was undefined)
+ * fixed bug in funct1.c (figure numbers missing with "-F" option,
+   patch tracker no.3537371)
+
+Changes (since 2.2.1) include
+
+ * Equations inserted as eps file names have enlarged bounding boxes and
+   their insertion points in the text are shifted down 5 points, which
+   ensures a correct baseline in most cases.
+
+New features (since 2.2.0) include
+
+ * allow conversion of equations and/or pdf and ps figures to eps files 
+   with insertion of eps or bitmap file names in the text, delimited by [###...###]
+
+Changes (since 2.1.0) include
+
+ * When inserting the raw LaTeX code of equations (-M32 option), 
+   equations are now delimited by $...$ or \[...\]
+   which allows MathType to recognize and convert them.
+
+New features (since 2.1.0) include
+
+ * allow specifying the folder for temporary files (-T option)
+   also under Windows. If this folder is specified in the GUI shell, 
+   it will be created if it does not yet exist.
+
+New features (since 2.0.0) include
+
+ * better support for the acronym package
+ * support for the preamble command \graphicspath{}
+ * apply MS Word styles more consistently
