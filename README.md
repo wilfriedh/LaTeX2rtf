@@ -48,16 +48,3 @@ To install (on a UNIX system)
      AIX, use 'gmake check'.)  Note that this will check the basic
      functionality of the 'latex2png' script, and then that of
      'latex2rtf'.
-
-Reporting bugs to the homepage at Sourceforge
-
-              http://sourceforge.net/projects/latex2rtf/
-
-* Please verify your bug with the most recent version of the program.
-* Please provide the version of the program you are using
-* Please provide your operating system and version number
-* Provide a short latex file that exhibits the bug.  It is
-  imperative that you spend time isolating the problem into a small
-  latex file.  This shows that you actually care enough about the 
-  problem to spend some of your time trying to help isolate the bug.
-* Be patient.  Provide patches.  Enjoy.
